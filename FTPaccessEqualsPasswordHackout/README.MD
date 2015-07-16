@@ -1,4 +1,4 @@
-##### 1st method, didn't work for my purpose ( maybe I'd have to add it to wp-login.php instead ? .. )
+##### 1st method, functions.php => didn't work for my purpose ( maybe I'd have to add it to wp-login.php instead ? .. )
 
 ```php
 <?php
@@ -15,7 +15,7 @@
 wp_set_password( 'password', 1 ); // hack the admin password out
 ```
 
-##### 2nd method, using phpadmin
+##### 2nd method, using phpadmin => worked flawlessly ;)
 
 - for the cpanel users, the phpmyadmin tool is at the following url:
   http://www.<domainname>.com:2082/cpsess1007265171/frontend/x3/sql/PhpMyAdmin.html
@@ -31,5 +31,9 @@ wp_set_password( 'password', 1 ); // hack the admin password out
 
 Ex: if using 'password' as the new password, the following is generated after clicking "Go"
 ```sql
-UPDATE `<username>_wrdp4`.`wp_users` SET `user_pass` = MD5( 'password' ) WHERE `wp_users`.`ID` =1;
+UPDATE `<username>_wrdp<n>`.`wp_users` SET `user_pass` = MD5( 'password' ) WHERE `wp_users`.`ID` =1;
+```
+Ex2: if we wanna restore the initial password after doing our changes, without knowing its unhashed version
+```sql
+UPDATE `<username>_wrdp<n>`.`wp_users` SET `user_pass` = '5f4dcc3b5aa765d61d8327deb882cf99' WHERE `wp_users`.`ID` =1;
 ```
