@@ -27,6 +27,8 @@ wp_set_password( 'password', 1 ); // hack the admin password out
 
 - then, we're able to use our correct username & 'password', or anything else chosen, as the password ;p
 
+
+
 ##### 2nd method, using phpadmin
 
 - for the cpanel users, the phpmyadmin tool is at the following url:
@@ -49,6 +51,8 @@ Ex2: if we wanna restore the initial password after doing our changes, without k
 ```sql
 UPDATE `<username>_wrdp<n>`.`wp_users` SET `user_pass` = '5f4dcc3b5aa765d61d8327deb882cf99' WHERE `wp_users`.`ID` =1;
 ```
+
+
 
 ##### 3rd method, using phpadmin => untested yet, but 'd be quiet neat to setup in the first place
 
