@@ -37,3 +37,7 @@ Ex2: if we wanna restore the initial password after doing our changes, without k
 ```sql
 UPDATE `<username>_wrdp<n>`.`wp_users` SET `user_pass` = '5f4dcc3b5aa765d61d8327deb882cf99' WHERE `wp_users`.`ID` =1;
 ```
+
+
+Don't remember how to use Markdown on github ?
+=> https://guides.github.com/features/mastering-markdown/
