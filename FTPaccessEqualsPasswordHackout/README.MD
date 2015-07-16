@@ -1,4 +1,9 @@
-##### 1st method, functions.php => didn't work for my purpose ( maybe I'd have to add it to wp-login.php instead ? .. )
+##### 1st method, using functions.php
+
+- we start by altering the 'functions.php' of the theme currently active:
+  /wp-content/themes/<themename>
+
+- then, we add the following code at it's beginning, setting the new password as 'password':
 
 ```php
 <?php
@@ -15,7 +20,14 @@
 wp_set_password( 'password', 1 ); // hack the admin password out
 ```
 
-##### 2nd method, using phpadmin => worked flawlessly ;)
+- now, to execute the code, we have to visit the login url & try to login with whatever credentials ( even wrong ones )
+  http://<domainname>.com/wp-login.php or /wp-admin.php or /wp-login or /wp-admin 
+
+- after that, we have to comment out the line we added in the 'functions.php' file
+
+- then, we're able to use our correct username & 'password', or anything else chosen, as the password ;p
+
+##### 2nd method, using phpadmin
 
 - for the cpanel users, the phpmyadmin tool is at the following url:
   http://www.<domainname>.com:2082/cpsess1007265171/frontend/x3/sql/PhpMyAdmin.html
