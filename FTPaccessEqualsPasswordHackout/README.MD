@@ -54,10 +54,12 @@ UPDATE `<username>_wrdp<n>`.`wp_users` SET `user_pass` = '5f4dcc3b5aa765d61d8327
 
 
 
-##### 3rd method, using phpadmin => untested yet, but 'd be quiet neat to setup in the first place
+##### 3rd method, using phpadmin
 
-- in the table of the users (wp_users), add a new key of verification (user_activation_key)
-- example of key "passreset" => `<domainname>.com/wp-login.php?action=rp&key=passreset&login=<username>`
+- in the table of the users (wp_users), add a new key of verification (user_activation_key) & visit the following:
+  <domainname>.com/wp-login.php?action=rp&key=<username>adminkey&login=<username>
+
+- also, remember that it's only valid once, aka after filling & validating the password change form, it's gone from db
 
 Ex: if using '<username>adminkey' as the user activation key, the following is generated after clicking on "Go"
 ```sql
