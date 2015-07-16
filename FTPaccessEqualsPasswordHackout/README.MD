@@ -52,9 +52,13 @@ UPDATE `<username>_wrdp<n>`.`wp_users` SET `user_pass` = '5f4dcc3b5aa765d61d8327
 
 ##### 3rd method, using phpadmin => untested yet, but 'd be quiet neat to setup in the first place
 
-- in the table of the users (wp_users), add a new key of verification (user_activation_key) 
+- in the table of the users (wp_users), add a new key of verification (user_activation_key)
 - example of key "passreset" => `<domainname>.com/wp-login.php?action=rp&key=passreset&login=<username>`
 
+Ex: if using '<username>adminkey' as the user activation key, the following is generated after clicking on "Go"
+```sql
+UPDATE `<username>_wrdp<n>`.`wp_users` SET `user_activation_key` = '<username>adminkey' WHERE `wp_users`.`ID` =1;
+```
 
 
 Don't remember how to use Markdown on github ?
