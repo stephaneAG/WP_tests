@@ -38,6 +38,10 @@ Ex2: if we wanna restore the initial password after doing our changes, without k
 UPDATE `<username>_wrdp<n>`.`wp_users` SET `user_pass` = '5f4dcc3b5aa765d61d8327deb882cf99' WHERE `wp_users`.`ID` =1;
 ```
 
+##### 2nd method, using phpadmin => untested yet, but 'd be quiet neat to setup in the first place
+
+- in the table of the users (wp_users), add a new key of verification (user_activation_key) 
+Ex: example of key "passreset" => `<domainname>.com/wp-login.php?action=rp&key=passreset&login=<username>`
 
 Don't remember how to use Markdown on github ?
 => https://guides.github.com/features/mastering-markdown/
