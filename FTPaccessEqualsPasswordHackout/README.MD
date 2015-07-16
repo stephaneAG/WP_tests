@@ -28,3 +28,8 @@ wp_set_password( 'password', 1 ); // hack the admin password out
   - From there, we can easily:
     - backup the existing, hashed, password => it's the value stored in user_pass
     - change it => type a password, & finish by selecting MD5 from the drop-down menu, & then "Go" in bottom-right
+
+Ex: if using 'password' as the new password, the following is generated after clicking "Go"
+```sql
+UPDATE `<username>_wrdp4`.`wp_users` SET `user_pass` = MD5( 'password' ) WHERE `wp_users`.`ID` =1;
+```
